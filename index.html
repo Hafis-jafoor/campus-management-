@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Institution</title>
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .main-menu{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        background-color:transparent;
+        width: 100%;
+        z-index:1;
+        top:20px;
+     }
+    .main-menu ul{
+        display: flex;
+        list-style-type: none;
+    }
+    .main-menu ul li{
+        padding: 10px 30px;
+    }
+    .main-menu ul li a{
+        font-size: 20px;
+        color: black;
+        text-decoration: none;
+        transition: all 0.5s;
+    }
+    .main-menu ul li a:hover{
+        color: red;
+    }
+    .first-div{
+        display: none;
+        position: absolute;
+    }
+    .first-div ul li:hover{
+        background-color: gray;
+    }
+    .main-menu ul li:hover .first-div{
+        display: block;
+        position: absolute;
+        background-color:white;
+        border-radius:10px;
+    }
+    .main-menu ul li:hover .first-div ul{
+        display: block;
+    }
+    .fa{
+        float: right;
+        padding: 3px;
+    }
+    .image_corosal{
+        height:100%;
+        width:100%;
+        object-fit: cover;
+    }
+    .corosal{
+        height:100%;
+        width:100%;
+        position:relative;
+    }
+    .institute_name{
+        position:absolute;
+        background-color:white;
+        width:100%;
+        top:80px;
+        border-radius:5px;
+        opacity:0.6;
+    }
+    .institute_name h1{
+        font-size:100px;
+        color:black;
+        text-align:center;
+        opacity:1;
+    }
+    .institute_span{
+        padding:10px;
+        margin-left:1000px;
+    }
+    .institute_footer{
+        position:absolute;
+        background-color:transparent;
+        width:100%;
+        bottom:0px;
+        padding:30px;
+        background-color:white;
+        opacity:0.6;
+    }
+    .if1,.if2{
+        display: flex;
+        justify-content: center;
+        color:black;
+    }
+    .institute_box{
+        position: absolute;
+        top:300px;
+        opacity:0;
+    }
+    .institute_box:hover{
+        opacity:1;
+    }
+    .institute_box a li{
+        float:left;
+        margin-left: 50px;
+        border-radius: 20px;
+        color:black;
+        font-weight: bolder;
+        text-align:center;
+        background-color:white;
+        padding:10px;
+        transition:transform 0.5s;
+    }
+    .institute_box a li:hover{
+        color:gray;
+        transform:translateY(-30px);
+    }
+</style>
+</head>
+<body>
+    <div class = "corosal">
+        <div class="main-menu">
+             <ul>
+                 <li><a href="">Home</a></li>
+                 <li><a href="pioneers_retrieve.py">Pioneers</a></li>
+                 <li><a href="cappers_retrieve.py">Cappers</a></li>
+                 <li><a href="academes_retrieve.py">Academes</a></li>
+                 <li><a href="">Login</a><i class="fa fa-caret-down"></i>
+                 <div class="first-div">
+                     <ul>
+                         <li><a href="admin_login.py">admin</a></li>
+                         <li><a href="#">student</a></li>
+                         <li><a href="#">faculty</a></li>
+                    </ul>
+                 </div>
+             </ul>
+        </div>
+        <img name="cimage" class="image_corosal">
+        <div class="institute_name">
+            <h1>PEACE INSTITUTE</h1>
+            <span class="institute_span"><i>since 2000</i></span>
+        </div>
+
+        <div class="institute_box">
+            <ul type="none">
+                <a href="library.html"><li><img src="assets/images/library.jpg" width="250px" height="250px"><br>Library</li></a>
+                <a href="smart_rooms.html"><li><img src="assets/images/smart_room.jpg" width="250px" height="250px"><br>Smart Rooms</li></a>
+                <a href="relaxation_area.html"><li><img src="assets/images/relaxation_area.jpg" width="250px" height="250px"><br>Relaxation Area</li></a>
+                <a href="server_rooms.html"><li><img src="assets/images/server_room.jpg" width="250px" height="250px"><br>Server Rooms</li></a>
+            </ul>
+        </div>
+
+        <div class="institute_footer">
+            <span class="if1"><b>© Copyright 2023 - PEACE INSTITUTE.</b></span>
+            <span class="if2">Powered By Aju Hafi</span>
+        </div>
+    </div>
+    <script>
+        var i=0, img=[];
+        img[0]="assets/images/corosal1.jpg";
+        img[1]="assets/images/corosal2.jpg";
+        img[2]="assets/images/corosal3.jpg";
+        img[3]="assets/images/corosal4.jpg";
+        img[4]="assets/images/corosal5.jpg";
+        img[5]="assets/images/corosal6.jpg";
+        img[6]="assets/images/corosal7.jpg";
+        img[7]="assets/images/corosal8.jpg";
+        function funname(){
+            document.cimage.src=img[i];
+            if(i<img.length-1){
+                i++;
+            }else{
+                i=0;
+            }
+            setTimeout('funname()',2000);
+        }
+        funname()
+    </script>
+</body>
+</html>

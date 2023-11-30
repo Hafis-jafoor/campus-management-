@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>relaxation_area</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+             background-image: url("assets/images/main_school.jpg");
+             background-size: cover;
+        }
+        .main{
+            height:100%;
+            width:100%;
+            position:relative;
+        }
+        .institute_name{
+            position:absolute;
+            background-color:white;
+            width:100%;
+            height:100px;
+            top:0px;
+            opacity:0.6;
+            z-index:1;
+        }
+        .institute_name h1{
+            font-size:70px;
+            color:black;
+            text-align:center;
+            opacity:1;
+        }
+        .institute_span{
+            position:absolute;
+            margin-left:900px;
+        }
+        .institute_footer{
+            position:absolute;
+            background-color:white;
+            width:100%;
+            bottom:-730px;
+            padding:30px;
+            background-color:white;
+            opacity:0.6;
+        }
+        .if1,.if2{
+            display: flex;
+            justify-content: center;
+            color:black;
+        }
+        .image_corosal{
+            border-radius:10px;
+            height:300px;
+            width:350px;
+            object-fit: cover;
+            border:5px solid white;
+        }
+        .middle{
+            position:absolute;
+            top:140px;
+            left:220px;
+        }
+        .image{
+            float:right;
+            margin-left:120px;
+            margin-top:10px;
+            transition:transform 0.5s;
+        }
+        .image:hover{
+            transform:translateY(-30px);
+        }
+        .content{
+            float:left;
+            height:370px;
+            width:500px;
+            transition:transform 0.5s;
+            padding:10px;
+            border-radius:10px;
+            background-color:white;
+        }
+        .content:hover{
+            transform:translateY(-30px);
+        }
+        .content p{
+            font-weight: bold;
+            font-family: "Brush Script MT", cursive;
+        }
+        .head{
+            margin-left:350px;
+        }
+        .fa{
+            position:absolute;
+            padding:20px;
+            font-size: 35px;
+            z-index:1;
+            left:1200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="institute_name">
+                <h1>PEACE INSTITUTE</h1>
+                <span class="institute_span"><i>since 2000</i></span>
+        </div>
+        <a href="index.html"><i class="fa fa-home"></i></a>
+        <div class="middle">
+            <h1 class="head">Relaxation area</h1><br><br><br>
+            <div class="content">
+                <p>The tradition of a campus began with the medieval European universities where
+                    the students and teachers lived and worked together in a cloistered
+                    environment.The notion of the importance of the setting to academic
+                    life later migrated to America, and early colonial educational institutions
+                    were based on the Scottish and English collegiate system. The campus
+                    evolved from the cloistered model in Europe to a diverse set of independent
+                    styles in the United States. Early colonial colleges were all built in
+                    proprietary styles, with some contained in single buildings,
+                    such as the campus of Princeton University or arranged in a version of
+                    the cloister reflecting American values, such as Harvard's.
+                    Both the campus designs and the architecture of colleges throughout the
+                    country have evolved in response to trends in the broader world,
+                    with most representing several different contemporary and historical styles
+                    and arrangements.</p>
+            </div>
+            <div class="image">
+                <img name="cimage" class="image_corosal">
+            </div>
+        </div>
+        <div class="institute_footer">
+            <span class="if1"><b>© Copyright 2023 - PEACE INSTITUTE.</b></span>
+            <span class="if2">Powered By Aju Hafi</span>
+        </div>
+    </div>
+    <script>
+        var i=0, img=[];
+        img[0]="assets/images/relaxation_area1.jpg";
+        img[1]="assets/images/relaxation_area2.jpg";
+        img[2]="assets/images/relaxation_area3.jpg";
+        img[3]="assets/images/relaxation_area4.jpg";
+        function funname(){
+            document.cimage.src=img[i];
+            if(i<img.length-1){
+                i++;
+            }else{
+                i=0;
+            }
+            setTimeout('funname()',2000);
+        }
+        funname()
+    </script>
+</body>
+</html>
