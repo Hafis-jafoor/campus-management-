@@ -117,3 +117,45 @@ print("content-type:text/html \r\n\r\n")
 # </script>
 # """)
 # connection.close()
+
+# TABLE CREATION Notification
+# import pymysql
+# connection = pymysql.connect(host="localhost", user="root", password="", database="Peace_institution")
+# cur = connection.cursor()
+# cur.execute("""create table Notification(Sno int(50)auto_increment primary key,
+#                                     Date  DATE,
+#                                     Subject varchar(200),
+#                                     Person varchar(100),
+#                                     Notification varchar(65530))""")
+# # cur.execute("""ALTER TABLE Remarks
+# # ADD Username varchar(255)""")
+# # cur.execute("""ALTER TABLE Remarks
+# # ADD Position varchar(255)""")
+# connection.commit()
+# print("""
+# <script>
+#     alert("table created successfully..!");
+# </script>
+# """)
+# connection.close()
+
+# TABLE CREATION Courses
+import pymysql
+connection = pymysql.connect(host="localhost", user="root", password="", database="Peace_institution")
+cur = connection.cursor()
+# cur.execute("""create table Courses(Sno int(50)auto_increment primary key,
+#                                     Course_name  varchar(200),
+#                                     Eligibility  varchar(200),
+#                                     Duration varchar(200),
+#                                     Fees varchar(100))""")
+cur.execute("""ALTER TABLE Courses
+ADD File varchar(255)""")
+# cur.execute("""ALTER TABLE Remarks
+# ADD Position varchar(255)""")
+connection.commit()
+print("""
+<script>
+    alert("table created successfully..!");
+</script>
+""")
+connection.close()

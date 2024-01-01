@@ -18,33 +18,35 @@ print("""
     </style>
 </head>
 <body>
-    <a href=".py"><i class="fa fa-arrow-left"></i></a>
-    <h2><i>remarks insert</i></h2>
+    <a href="admin_main_page.py"><i class="fa fa-arrow-left"></i></a>
+    <h2><i>Notification insert</i></h2>
     <div>
         <form method = "post">
-            <input type="date" placeholder="enter the current date" name = "rdate" value="%s"><br><br>
-            <textarea  name="remark" rows="10" cols="100">
-            </textarea><br><br>
-            <input type="text" placeholder="enter the username" name = "rname"><br><br>
+            <input type="date" name = "ndate" value="%s"><br><br>
+            <input type="text" placeholder="enter the subject" name = "sname"><br><br>
+            <label>enter the person to sent</label>
             <input type="radio" name = "position" value="student">student
-            <input type="radio" name = "position" value="faculty">faculty  <br><br>  
+            <input type="radio" name = "position" value="faculty">faculty 
+             <input type="radio" name = "position" value="common">common<br><br>
+             <textarea  name="notification" rows="10" cols="100" placeholder="enter the notification">
+            </textarea><br><br>  
             <input type = "submit" value = "insert" name = "ssub">
         </form>
     </div>
 </body>
 </html>
-""" % (today))
+""" % today)
 import cgi
 
 f = cgi.FieldStorage()
-date = f.getvalue("rdate")
-remark = f.getvalue("remark")
-name = f.getvalue("rname")
+date = f.getvalue("ndate")
+name = f.getvalue("sname")
+notification = f.getvalue("notification")
 position = f.getvalue("position")
 sub = f.getvalue("ssub")
 if sub != None:
-    cur.execute("""insert into Remarks(Date,Remarks,Status,Username,Position)values('%s','%s','%s','%s','%s')
-                """ % (date, remark, 'recent', name, position))
+    cur.execute("""insert into Notification(Date,Subject,Person,Notification)values('%s','%s','%s','%s')
+                """ % (date, name, position, notification))
     conn.commit()
     print("""
         <script>

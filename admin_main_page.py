@@ -185,8 +185,11 @@ print(""""
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="#">New notification</a>
-                <a href="#">Existing notification</a>
+                <a href="notification_insert.py">New notification</a>
+                <a href="not_student_retrieve.py">Student notification</a>
+                <a href="not_faculty_retrieve.py">Faculty notification</a>
+                <a href="not_common_retrieve.py">Common notification</a>
+                <a href="all_notification_retrieve.py">All notification</a>
             </div>
             <button class="dropdown-btn">Remarks 
             <i class="fa fa-caret-down"></i>
